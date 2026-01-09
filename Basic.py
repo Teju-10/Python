@@ -1,0 +1,2 @@
+s = 'balu'
+print(s[])
