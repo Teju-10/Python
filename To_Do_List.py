@@ -6,49 +6,51 @@ def show_menu():
     print("2. View Tasks")
     print("3. Update Task")
     print("4. Delete Task")
-    print("5. Exit")
-
+    
 while True:
     show_menu()
-    choice = input("Choose an option (1-5): ")
-
-    if choice == "1":
-        task = input("Enter new task: ")
+    choice = (input("Enter the choice from(1-4):"))
+    
+    if choice == '1':
+        task = input("Enter the task:")
         tasks.append(task)
-        print("Task added!")
+        print("task added")
 
-    elif choice == "2":
+    elif choice == '2':
         if not tasks:
-            print("No tasks available.")
+            print("Nothing is their")
         else:
-            print("\nYour Tasks:")
-            for i, task in enumerate(tasks, start=1):
+            print("View the choice")
+            for i,task in enumerate(tasks, start = 1):
                 print(f"{i}. {task}")
 
-    elif choice == "3":   # UPDATE
+    elif choice == "3":
         if not tasks:
-            print("No tasks to update.")
+            print("Nothing is their")
         else:
-            for i, task in enumerate(tasks, start=1):
+            for i,task in enumerate(tasks, start = 1):
                 print(f"{i}. {task}")
 
-            num = int(input("Enter task number to update: "))
+            num = int(input("Enter the choice:"))
             if 1 <= num <= len(tasks):
-                new_task = input("Enter updated task: ")
-                tasks[num - 1] = new_task
-                print("Task updated successfully!")
+                num_task = input("udpate the task:")
+                tasks[num -1] = num_task
+                print("Successfull updated")
             else:
-                print("Invalid task number.")
-
-    elif choice == "4":
+                print("Invalid!")
+    
+    elif choice == '4':
         if not tasks:
-            print("No tasks to delete.")
+            print("Nothing is their")
         else:
-            num = int(input("Enter task number to delete: "))
+            for i,task in enumerate(tasks, start = 1):
+                print(f"{i}. {task}")
+                
+            num = int(input("Enter the choice:"))
             if 1 <= num <= len(tasks):
-                removed = tasks.pop(num - 1)
-                print(f"Deleted: {removed}")
+                remove = tasks.pop(num-1)
+                print("Deleted successfully")
             else:
-                print("Invalid task number!")
+                print("Invalid")
     else:
-        print("Invalid option! Try again.")
+        print("Try again!")   
